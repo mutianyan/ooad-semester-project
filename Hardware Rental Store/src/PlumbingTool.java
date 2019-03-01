@@ -7,13 +7,13 @@ public class PlumbingTool extends Tool{
 	}
 
 	@Override
-	public void pricePerDay() {
+	public void setPrice() {
 		this.price = 15.0;
 		
 	}
 
 	@Override
-	public void category() {
+	public void setCategory() {
 		this.category = "plumbing";
 		
 	}

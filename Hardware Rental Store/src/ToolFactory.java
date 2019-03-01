@@ -8,18 +8,17 @@ public class ToolFactory {
 	
 	public ToolFactory(){
 		toolCollection = new ArrayList<Tool>(capacity);
+		this.toolCollection = generateToolCollection();
 	}
 	
 
 	// generate tool set of 2
-	public List<Tool> generateToolsCollection(){ // hardcode??
+	public List<Tool> generateToolCollection(){ // hardcode??
 		generateTools("Painting", 4);
 		generateTools("Concrete", 4);
 		generateTools("Plumbing", 4);
 		generateTools("Woodwork", 4);
 		generateTools("Yardwork", 4);
-		
-		System.out.println("20 tools have been added to your store");
 		return this.toolCollection;
 	}
 	
@@ -35,16 +34,33 @@ public class ToolFactory {
 				this.toolCollection.add(new PaintingTool("painting "+ i));
 		else if(category.equals("Concrete"))
 			for(int i=1; i<= num; i++)
-				this.toolCollection.add(new PaintingTool("concrete "+ i));
+				this.toolCollection.add(new ConcreteTool("concrete "+ i));
 		else if(category.equals("Plumbing"))
 			for(int i=1; i<= num; i++)
-				this.toolCollection.add(new PaintingTool("plumbing "+ i));
+				this.toolCollection.add(new PlumbingTool("plumbing "+ i));
 		else if(category.equals("Woodwork"))
 			for(int i=1; i<= num; i++)
-				this.toolCollection.add(new PaintingTool("woodwork "+ i));
+				this.toolCollection.add(new WoodworkTool("woodwork "+ i));
 		else if(category.equals("Yardwork"))
 			for(int i=1; i<= num; i++)
-				this.toolCollection.add(new PaintingTool("yardwork "+ i));
+				this.toolCollection.add(new YardworkTool("yardwork "+ i));
 		
 	}
+	
+	
+	public String toString(){
+		String str = "In the tool list : ";
+		for(Tool tool: toolCollection){
+			str += "( " + tool.getCategory() + ", " + tool.getName() + ", "+ tool.getPrice() + " )";
+		}
+		
+		return str;
+	}
+	
+	
+	
+	
+	
+	
+	
 }

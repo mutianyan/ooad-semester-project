@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class CustomerFactory {
@@ -8,14 +9,13 @@ public class CustomerFactory {
 	
 	public CustomerFactory(){
 		customerCollection= new ArrayList<Customer>(capacity);
+		this.customerCollection = generateCustomerCollection();
 	}
 	
-	public List<Customer> generateToolsCollection(){ // hardcode??
-		generateCustomers("Casual", 4);
-		generateCustomers("Regular", 3);
-		generateCustomers("Business", 3);
-		
-		System.out.println("10 customers have been added to your store");
+	public List<Customer> generateCustomerCollection(){ // hardcode??
+		generateCustomers("casual", 4);
+		generateCustomers("regular", 3);
+		generateCustomers("business", 3);
 		return this.customerCollection;
 	}
 	
@@ -25,16 +25,33 @@ public class CustomerFactory {
 	
 	
 	public void generateCustomers(String category, int num){
-		if(category.equals("Painting"))
+		System.out.println("category is "+ category);
+		if(category.equals("casual"))
 			for(int i=1; i<= num; i++)
-				this.customerCollection.add(new CasualCustomer("casual "+ i));
-		else if(category.equals("Concrete"))
+				this.customerCollection.add(new CasualCustomer("casual", "casual "+i));
+		else if(category.equals("regular"))
 			for(int i=1; i<= num; i++)
-				this.customerCollection.add(new RegularCustomer("regular "+ i));
-		else if(category.equals("Plumbing"))
+				this.customerCollection.add(new RegularCustomer("regular", "regualr "+i));
+		else if(category.equals("business"))
 			for(int i=1; i<= num; i++)
-				this.customerCollection.add(new BusinessCustomer("business "+ i));
+				this.customerCollection.add(new BusinessCustomer("business", "business "+i));
 		
 	}
+	
+	
+	public String toString(){
+		String str = "In the customer list : ";
+		for(Customer customer: customerCollection){
+			str += "( " + customer.getType() + ", " + customer.getName() + ", "+ customer.getAvailableNum() + " )";
+		}
+		
+		return str;
+	}
+	
+	
+	
+	
+	
+	
 	
 }

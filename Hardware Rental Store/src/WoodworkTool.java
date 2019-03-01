@@ -1,19 +1,20 @@
 
-public class Woodwork extends Tool{
+public class WoodworkTool extends Tool{
 
-	public Woodwork(String name) {
+	public WoodworkTool(String name) {
 		super(name);
+		
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public void pricePerDay() {
+	public void setPrice() {
 		this.price = 20;
 		
 	}
 
 	@Override
-	public void category() {
+	public void setCategory() {
 		this.category = "wood";
 		
 	}

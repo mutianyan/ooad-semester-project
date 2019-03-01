@@ -7,13 +7,13 @@ public class ConcreteTool extends Tool {
 	}
 
 	@Override
-	public void pricePerDay() {
+	public void setPrice() {
 		this.price = 10.0;
 		
 	}
 
 	@Override
-	public void category() {
+	public void setCategory() {
 		// TODO Auto-generated method stub
 		this.category="concrete";
 		

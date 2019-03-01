@@ -6,17 +6,24 @@ public abstract class Tool {
 	
 	public Tool(String name){
 		this.name = name;
+		setPrice();
+		setCategory();
 	}
 	
-	public String getToolName(){
+	public String getName(){
 		return this.name;
 	}
 	
-	public double getToolPrice(){
+	public double getPrice(){
 		return this.price;
 	}
 	
-	public abstract void pricePerDay();
-	public abstract void category();
+	public String getCategory(){
+		return this.category;
+	}
+	
+	
+	public abstract void setPrice();
+	public abstract void setCategory();
 
 }

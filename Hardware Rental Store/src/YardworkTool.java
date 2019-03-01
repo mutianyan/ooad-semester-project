@@ -1,19 +1,19 @@
 
-public class YardTool extends Tool{
+public class YardworkTool extends Tool{
 
-	public YardTool(String name) {
+	public YardworkTool(String name) {
 		super(name);
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public void pricePerDay() {
+	public void setPrice() {
 		this.price =20.0;
 		
 	}
 
 	@Override
-	public void category() {
+	public void setCategory() {
 		this.category="yard";
 		
 	}
