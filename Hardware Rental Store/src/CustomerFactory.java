@@ -25,7 +25,6 @@ public class CustomerFactory {
 	
 	
 	public void generateCustomers(String category, int num){
-		System.out.println("category is "+ category);
 		if(category.equals("casual"))
 			for(int i=1; i<= num; i++)
 				this.customerCollection.add(new CasualCustomer("casual", "casual "+i));

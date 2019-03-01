@@ -7,11 +7,15 @@ public class Rental {
 	private Customer customer;
 	private Tool tool; // rent 3 tool should be 3 rental order or just one ?
 	private int remainingDays;
+	private double amount;
+	private int initialDays;
 	
-	public Rental(Customer customer, Tool tool, int remainingDays){
+	public Rental(Customer customer, Tool tool, int initialDays, double amount){
 		this.customer = customer;
 		this.tool = tool;
-		this.remainingDays = remainingDays;
+		this.initialDays = initialDays;
+		this.remainingDays = this.initialDays;
+		this.amount = amount;
 	}
 	
 	public void deductOneDay(){
@@ -20,6 +24,11 @@ public class Rental {
 	public int getRemainingDays(){
 		return this.remainingDays;
 	}
+	
+	public int getInitialDays(){
+		return this.initialDays;
+	}
+	
 	
 	public Tool getTool(){
 		return this.tool;
@@ -35,6 +44,10 @@ public class Rental {
 	
 	public Customer getCustomer(){
 		return this.customer;
+	}
+	
+	public Double getAmount(){
+		return this.amount;
 	}
 
 }
